@@ -15,4 +15,7 @@
  **/
 
 public protocol DataLayer {
+    func get(onCompletion: ([Todo], Error?))
+    func add(title: String, order: Int, completed: Bool,
+             onCompletion: (Todo?, Error?))
 }
