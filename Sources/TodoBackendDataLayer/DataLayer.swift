@@ -15,14 +15,14 @@
  **/
 
 public enum DataLayerError: Error {
-   case InternalError(Error)
-   case TodoNotFound
+   case internalError(Error)
+   case todoNotFound
 }
 
 // From http://alisoftware.github.io/swift/async/error/2016/02/06/async-errors/
 public enum Result<T> {
-   case Success(T)
-   case Failure(DataLayerError)
+   case success(T)
+   case failure(DataLayerError)
 }
 
 public protocol DataLayer {
