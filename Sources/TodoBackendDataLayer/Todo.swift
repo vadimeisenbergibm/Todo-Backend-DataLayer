@@ -17,6 +17,6 @@
 public protocol Todo {
     var id: String { get }
     var title: String { get }
-    var order: Int { get }
+    var order: Int? { get }
     var completed: Bool { get }
 }
