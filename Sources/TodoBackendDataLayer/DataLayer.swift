@@ -27,5 +27,6 @@ public enum Result<T> {
 
 public protocol DataLayer {
     func get(completion: (Result<[Todo]>) -> Void)
-    mutating func add(title: String, order: Int, completed: Bool, completion: (Result<Todo>) -> Void)
+    mutating func add(title: String, order: Int?, completed: Bool,
+                      completion: (Result<Todo>) -> Void)
 }
