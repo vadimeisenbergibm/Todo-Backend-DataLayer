@@ -14,8 +14,19 @@
  * limitations under the License.
  **/
 
+public enum DataLayerError: Error {
+   case InternalError(Error)
+   case TodoNotFound
+}
+
+// From http://alisoftware.github.io/swift/async/error/2016/02/06/async-errors/
+public enum Result<T> {
+   case Success(T)
+   case Failure(DataLayerError)
+}
+
 public protocol DataLayer {
-    func get(onCompletion: ([Todo], Error?))
+    func get(completion: Result<[Todo]>)
     func add(title: String, order: Int, completed: Bool,
-             onCompletion: (Todo?, Error?))
+             completion: Result<Todo>)
 }
